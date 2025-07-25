@@ -104,6 +104,3 @@ async def send_chat_message(
 
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
-
-
-# TODO Edit any message and regenerate all responses
