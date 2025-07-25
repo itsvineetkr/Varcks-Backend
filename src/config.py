@@ -33,7 +33,6 @@ class Settings(BaseSettings):
     API_STR: str = "api"
     API_VERSION: str
 
-
     FRONTEND_URL: AnyUrl = "http://localhost:3000"
     BACKEND_CORS_ORIGINS: Annotated[
         list[AnyUrl] | str, BeforeValidator(parse_comma_separated_list)
@@ -57,6 +56,9 @@ class Settings(BaseSettings):
     SERVICE_PORT: int
     MONGODB_URI: str
     MONGODB_DB_NAME: str
+
+    OPENAI_API_KEY: str
+    ANTHROPIC_API_KEY: str
 
 
 @lru_cache

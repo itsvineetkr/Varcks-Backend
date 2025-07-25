@@ -3,6 +3,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi import FastAPI
 
 from src.auth.router import router as auth_router
+from src.routes.chat.router import router as chat_router
 from src.config import get_settings
 
 
@@ -28,6 +29,9 @@ app.add_middleware(
 
 app.include_router(
     auth_router, tags=["Authentication"], prefix=f"{settings.API_BASE_PATH}"
+)
+app.include_router(
+    chat_router, tags=["Chat"], prefix=f"{settings.API_BASE_PATH}"
 )
 
 

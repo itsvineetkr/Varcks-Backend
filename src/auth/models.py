@@ -1,4 +1,8 @@
 from pydantic import BaseModel
+from src.database.mongo import db
+
+
+users = db.users
 
 
 class User(BaseModel):
